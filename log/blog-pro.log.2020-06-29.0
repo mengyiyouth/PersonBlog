@@ -1,0 +1,6 @@
+2020-06-29 16:58:06.683  INFO 11356 --- [main] com.mengyi.BlogApplicationTests          : Starting BlogApplicationTests on DESKTOP-D7L5QJ7 with PID 11356 (started by mengyiyouth in D:\code\java_code\blog)
+2020-06-29 16:58:06.688  INFO 11356 --- [main] com.mengyi.BlogApplicationTests          : The following profiles are active: pro
+2020-06-29 16:58:10.130  INFO 11356 --- [main] com.mengyi.BlogApplicationTests          : Started BlogApplicationTests in 3.916 seconds (JVM running for 4.908)
+2020-06-29 17:01:13.276  INFO 4268 --- [main] com.mengyi.BlogApplicationTests          : Starting BlogApplicationTests on DESKTOP-D7L5QJ7 with PID 4268 (started by mengyiyouth in D:\code\java_code\blog)
+2020-06-29 17:01:13.277  INFO 4268 --- [main] com.mengyi.BlogApplicationTests          : The following profiles are active: pro
+2020-06-29 17:01:16.281  INFO 4268 --- [main] com.mengyi.BlogApplicationTests          : Started BlogApplicationTests in 3.413 seconds (JVM running for 4.309)

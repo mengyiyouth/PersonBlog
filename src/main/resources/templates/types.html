@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>分类</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+
+<body>
+<!--导航-->
+<!--引入自定义css,缩小间隔-->
+<nav th:replace="_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-opacity-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui header item">马户之家</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini home icon"></i>首页</a>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="mini clone outline icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>音乐</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="mini info icon"></i>关于马户的一切</a>
+            <!--右侧搜索框-->
+            <div class="right m-item item m-mobile-hide">
+                <div class="ui icon input">
+                    <input type="text" placeholder="搜索博客">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="ui menu toggle blue icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--中间内容-->
+<div class="m-padded-tb-large m-opacity-tiny m-container-small">
+    <!--contianer能够较好的适用于移动端-->
+    <div class="ui container">
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">分类</h3>
+                </div>
+                <div class="right aligned column">
+                    <!--防止标题换行-->
+                    共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.total}">14</h2>个
+                </div>
+            </div>
+        </div>
+
+        <!--放置分类的区域-->
+        <div class="ui attached segment m-padded-tb-large">
+            <div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
+                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic  button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">好文</a>
+                <div class="ui basic  left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
+            </div>
+
+        </div>
+
+        <!--文章列表-->
+        <div class="ui top attached teal segment animated fadeInLeft">
+            <!--博客内容-->
+            <div class="ui attached segment " >
+                <div class="ui padded vertical segment m-padded-tb-big" th:each="blog : ${pageInfo.list}">
+                    <!--堆叠的时候将左右两边反转，eleven和five的两列互换-->
+                    <div class="ui middle aligned mobile reversed stackable grid">
+                        <div class="eleven wide column">
+                            <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black m-title-font" th:text="${blog.title}">马户的故事</a></h3>
+                            <p class="m-text m-margin-top-max" th:text="|${blog.description}......|">互联网的朋友们大家好，今天故事的主人公是我的一个朋友，他叫马户，是人类的好朋友</p>
+                            <!--布局-->
+                            <div class="ui stackable grid">
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <!--头像-->
+                                            <img src="https://i.picsum.photos/id/1008/100/100.jpg" th:src="@{${blog.avatar}}" alt="" class="ui avatar image">
+                                            <div class="content">
+                                                <a href="#" class="header" th:text="${blog.nickname}">莉莉安</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <!--发布日期-->
+                                            <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-01-01</span>
+                                        </div>
+
+                                        <div class="item">
+                                            <!--浏览次数-->
+                                            <i class="eye icon"></i> <span th:text="${blog.views}">2020</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="right aligned five wide column">
+                                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.typeName}">认知升级</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--加载图片-->
+                        <div class="five wide column">
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <img src="https://i.picsum.photos/id/1008/800/450.jpg" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--底部-->
+            <!--放置上下翻页的按钮-->
+            <!--                    <div class="ui bottom attached segment">
+                                    <div class="ui middle aligned two column grid">
+                                        <div class="column">
+                                            <a href="#" class="ui mini teal basic button">上一页</a>
+                                        </div>
+                                        <div class="right aligned column">
+                                            <a href="#" class="ui mini teal basic button">下一页</a>
+                                        </div>
+                                    </div>
+                                </div>-->
+            <div class="ui bottom attached segment m-opacity grid">
+                <div class="three wide column" align="center">
+                    <a class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" th:unless="${pageInfo.isFirstPage}">上一页</a>
+                </div>
+
+                <div class="ten wide column" align="center">
+                    <p> <span th:text="${pageInfo.pageNum}"></span> / <span th:text="${pageInfo.pages}"></span> </p>
+                </div>
+
+                <div class="three wide column" align="center">
+                    <a class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!--分页-->
+<!--        <div class="ui bottom attached segment">-->
+<!--            <div class="ui middle aligned two column grid">-->
+<!--                <div class="column">-->
+<!--                    <a href="#" class="ui mini teal basic button">上一页</a>-->
+<!--                </div>-->
+<!--                <div class="right aligned column">-->
+<!--                    <a href="#" class="ui mini teal basic button">下一页</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+<!--底部-->
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-huge m-opacity-mini">
+    <!--容器-->
+    <div class="ui center aligned container">
+        <!--底部分割线-->
+        <div class="ui section divider"></div>
+        <div class="ui inverted divided stackable grid">
+            <div class="four wide column">
+                <!--这里让其在与顶端再隔开一段，达到横向居中的效果-->
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced
+                    m-margin-top-large">联系我</div>
+                <div class="ui inverted link list">
+                    <div href="#" class="m-text-thin">Email: mengyiyouth@163.com</div>
+                    <div href="#" class="m-text-thin">QQ: 1197875732</div>
+                </div>
+            </div>
+            <!--显示微信二维码-->
+            <div class="four wide column" >
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced">微信</div>
+                        <img src="../static/images/wechat.png" class="ui m-margin-top rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <!--最新博客-->
+            <!--                <div class="three wide column">-->
+            <!--                    <h4 class="ui inverted header m-text-thin m-text-space">最新博客</h4>-->
+            <!--                    <div class="ui inverted link list">-->
+            <!--                        <a href="#" class="item">用户故事(啦啦啦)</a>-->
+            <!--                        <a href="#" class="item">用户故事(啦啦啦)</a>-->
+            <!--                        <a href="#" class="item">用户故事(啦啦啦)</a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+
+            <div class="eight wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced
+                    m-margin-top-large">博客介绍</div>
+                <div class="ui inverted link list">
+                    <p class="inverted m-text-thin m-text-space">本博客，是为我的一个朋友马户先生所开，旨在讲述马户先生年轻时，风花雪月，快意恩仇，饮马
+                        江湖的故事，如有雷同，纯属虚构</p>
+                </div>
+            </div>
+        </div>
+
+        <!--分割线-->
+        <div class="ui section divider"></div>
+        <p class="m-text-thin m-text-space">我的一个马户朋友</p>
+    </div>
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+<!--增加点击事件，隐藏按钮-->
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    })
+</script>
+</body>
+</html>

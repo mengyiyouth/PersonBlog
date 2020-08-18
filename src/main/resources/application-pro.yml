@@ -1,0 +1,30 @@
+#生产环境
+server:
+  port: 2020
+spring:
+  thymeleaf:
+    mode: HTML
+  messages:
+    basename: i18n/messages
+  datasource:
+    url: jdbc:mysql://101.201.150.119:3306/blog?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 101.201.150.119
+    port: 6379
+    password: 20200718
+
+logging:
+  level:
+    root: warn
+    com.mengyi: info
+  file:
+    name: log/blog-pro.log
+
+mybatis:
+  type-aliases-package: com.mengyi.entity
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

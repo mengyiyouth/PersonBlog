@@ -1,0 +1,113 @@
+2020-07-16 13:02:32.582  INFO 12952 --- [restartedMain] com.mengyi.BlogApplication               : Starting BlogApplication on DESKTOP-D7L5QJ7 with PID 12952 (D:\code\java_code\blog\target\classes started by mengyiyouth in D:\code\java_code\blog)
+2020-07-16 13:02:32.588 DEBUG 12952 --- [restartedMain] com.mengyi.BlogApplication               : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-07-16 13:02:32.589  INFO 12952 --- [restartedMain] com.mengyi.BlogApplication               : The following profiles are active: dev
+2020-07-16 13:02:32.694  INFO 12952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-16 13:02:32.695  INFO 12952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-16 13:02:33.853  INFO 12952 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-16 13:02:33.857  INFO 12952 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-16 13:02:33.958  INFO 12952 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-07-16 13:02:34.607  INFO 12952 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.mengyi.config.RedisConfig$$EnhancerBySpringCGLIB$$45bc937] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-07-16 13:02:35.081  INFO 12952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-07-16 13:02:35.103  INFO 12952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-16 13:02:35.104  INFO 12952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-07-16 13:02:35.106  INFO 12952 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-07-16 13:02:35.106  INFO 12952 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-07-16 13:02:35.106  INFO 12952 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-07-16 13:02:35.168  INFO 12952 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-07-16 13:02:35.413  INFO 12952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-16 13:02:35.413  INFO 12952 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2718 ms
+2020-07-16 13:02:36.695  INFO 12952 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-16 13:02:36.825  INFO 12952 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-16 13:02:37.537  INFO 12952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-07-16 13:02:37.586  INFO 12952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-16 13:02:37.588  INFO 12952 --- [restartedMain] com.mengyi.BlogApplication               : Started BlogApplication in 6.005 seconds (JVM running for 7.945)
+2020-07-16 13:03:01.310  INFO 12952 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-16 13:03:01.310  INFO 12952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-16 13:03:01.322  INFO 12952 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-07-16 13:03:01.479  INFO 12952 --- [http-nio-8080-exec-1] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.IndexController.index', args=[{}, 1, {}]}
+2020-07-16 13:03:01.510  INFO 12952 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-07-16 13:03:01.717  INFO 12952 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-07-16 13:03:01.758 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-07-16 13:03:01.788 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
+2020-07-16 13:03:01.884 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
+2020-07-16 13:03:01.886 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getFirstPageBlog  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-07-16 13:03:01.886 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getFirstPageBlog  : ==> Parameters: 10(Integer)
+2020-07-16 13:03:01.894 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getFirstPageBlog  : <==      Total: 2
+2020-07-16 13:03:01.895 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getAllRecommendBlog      : ==>  Preparing: select * from t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-07-16 13:03:01.895 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getAllRecommendBlog      : ==> Parameters: 
+2020-07-16 13:03:01.898 DEBUG 12952 --- [http-nio-8080-exec-1] c.m.dao.BlogDao.getAllRecommendBlog      : <==      Total: 2
+2020-07-16 13:03:01.902 DEBUG 12952 --- [http-nio-8080-exec-1] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-07-16 13:03:01.903 DEBUG 12952 --- [http-nio-8080-exec-1] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : ==> Parameters: 
+2020-07-16 13:03:01.904 DEBUG 12952 --- [http-nio-8080-exec-1] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : <==      Total: 2
+2020-07-16 13:03:01.905  INFO 12952 --- [http-nio-8080-exec-1] com.mengyi.aspect.LogAspect              : Result : index
+2020-07-16 13:04:01.291  WARN 12952 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2020-07-16 13:04:39.079  WARN 12952 --- [http-nio-8080-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /sockjs-node/info
+2020-07-16 13:05:13.009  INFO 12952 --- [http-nio-8080-exec-4] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/blog/16', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.IndexController.blog', args=[16, {}]}
+2020-07-16 13:05:13.012 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and b.id = ? 
+2020-07-16 13:05:13.012 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.getDetailedBlog   : ==> Parameters: 16(Long)
+2020-07-16 13:05:13.015 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.getDetailedBlog   : <==      Total: 1
+2020-07-16 13:05:13.179 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.updateViews       : ==>  Preparing: update t_blog b set b.views = b.views+1 where b.id = ? 
+2020-07-16 13:05:13.179 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.updateViews       : ==> Parameters: 16(Long)
+2020-07-16 13:05:13.203 DEBUG 12952 --- [http-nio-8080-exec-4] com.mengyi.dao.BlogDao.updateViews       : <==    Updates: 1
+2020-07-16 13:05:13.203  INFO 12952 --- [http-nio-8080-exec-4] com.mengyi.aspect.LogAspect              : Result : blog
+2020-07-16 13:05:13.737  INFO 12952 --- [http-nio-8080-exec-9] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/comments/16', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.CommentController.comments', args=[16, {}]}
+2020-07-16 13:05:13.740 DEBUG 12952 --- [http-nio-8080-exec-9] c.m.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-07-16 13:05:13.741 DEBUG 12952 --- [http-nio-8080-exec-9] c.m.d.C.findByBlogIdParentIdNull         : ==> Parameters: 16(Long), -1(Long)
+2020-07-16 13:05:13.752 DEBUG 12952 --- [http-nio-8080-exec-9] c.m.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-07-16 13:05:13.752  INFO 12952 --- [http-nio-8080-exec-9] com.mengyi.aspect.LogAspect              : Result : blog :: commentList
+2020-07-16 13:05:17.414  INFO 12952 --- [http-nio-8080-exec-1] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/blog/16', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.IndexController.blog', args=[16, {}]}
+2020-07-16 13:05:17.415 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and b.id = ? 
+2020-07-16 13:05:17.415 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getDetailedBlog   : ==> Parameters: 16(Long)
+2020-07-16 13:05:17.417 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.getDetailedBlog   : <==      Total: 1
+2020-07-16 13:05:17.417 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.updateViews       : ==>  Preparing: update t_blog b set b.views = b.views+1 where b.id = ? 
+2020-07-16 13:05:17.417 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.updateViews       : ==> Parameters: 16(Long)
+2020-07-16 13:05:17.421 DEBUG 12952 --- [http-nio-8080-exec-1] com.mengyi.dao.BlogDao.updateViews       : <==    Updates: 1
+2020-07-16 13:05:17.421  INFO 12952 --- [http-nio-8080-exec-1] com.mengyi.aspect.LogAspect              : Result : blog
+2020-07-16 13:05:17.842  INFO 12952 --- [http-nio-8080-exec-6] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/comments/16', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.CommentController.comments', args=[16, {}]}
+2020-07-16 13:05:17.843 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-07-16 13:05:17.843 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.d.C.findByBlogIdParentIdNull         : ==> Parameters: 16(Long), -1(Long)
+2020-07-16 13:05:17.844 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.d.C.findByBlogIdParentIdNull         : <==      Total: 0
+2020-07-16 13:05:17.845  INFO 12952 --- [http-nio-8080-exec-6] com.mengyi.aspect.LogAspect              : Result : blog :: commentList
+2020-07-16 13:05:19.755  INFO 12952 --- [http-nio-8080-exec-7] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.IndexController.blog', args=[15, {}]}
+2020-07-16 13:05:19.756 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id bid,b.first_picture,b.flag,b.title,b.content,b.views, b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name from t_blog b, t_user u, t_type t where b.user_id = u.id and b.type_id = t.id and b.id = ? 
+2020-07-16 13:05:19.756 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.getDetailedBlog   : ==> Parameters: 15(Long)
+2020-07-16 13:05:19.758 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.getDetailedBlog   : <==      Total: 1
+2020-07-16 13:05:19.762 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.updateViews       : ==>  Preparing: update t_blog b set b.views = b.views+1 where b.id = ? 
+2020-07-16 13:05:19.762 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.updateViews       : ==> Parameters: 15(Long)
+2020-07-16 13:05:19.766 DEBUG 12952 --- [http-nio-8080-exec-7] com.mengyi.dao.BlogDao.updateViews       : <==    Updates: 1
+2020-07-16 13:05:19.766  INFO 12952 --- [http-nio-8080-exec-7] com.mengyi.aspect.LogAspect              : Result : blog
+2020-07-16 13:05:20.253  INFO 12952 --- [http-nio-8080-exec-2] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.CommentController.comments', args=[15, {}]}
+2020-07-16 13:05:20.253 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNull         : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-07-16 13:05:20.253 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNull         : ==> Parameters: 15(Long), -1(Long)
+2020-07-16 13:05:20.255 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNull         : <==      Total: 1
+2020-07-16 13:05:20.256 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNotNull      : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-07-16 13:05:20.257 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNotNull      : ==> Parameters: 15(Long), 37(Long)
+2020-07-16 13:05:20.258 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdParentIdNotNull      : <==      Total: 1
+2020-07-16 13:05:20.259 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdAndReplayId          : ==>  Preparing: select * from t_comment c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc 
+2020-07-16 13:05:20.260 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdAndReplayId          : ==> Parameters: 15(Long), 38(Long)
+2020-07-16 13:05:20.262 DEBUG 12952 --- [http-nio-8080-exec-2] c.m.d.C.findByBlogIdAndReplayId          : <==      Total: 0
+2020-07-16 13:05:20.263  INFO 12952 --- [http-nio-8080-exec-2] com.mengyi.aspect.LogAspect              : Result : blog :: commentList
+2020-07-16 13:59:17.447  WARN 12952 --- [http-nio-8080-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /home
+2020-07-16 19:18:12.457  INFO 12952 --- [http-nio-8080-exec-6] com.mengyi.aspect.LogAspect              : Request : RequestLog{url='/', ip='0:0:0:0:0:0:0:1', classMethod='com.mengyi.controller.IndexController.index', args=[{}, 1, {}]}
+2020-07-16 19:18:12.553 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM t_blog b, t_type t, t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-07-16 19:18:12.598 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
+2020-07-16 19:18:12.652 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
+2020-07-16 19:18:12.661 DEBUG 12952 --- [http-nio-8080-exec-6] com.mengyi.dao.BlogDao.getFirstPageBlog  : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.update_time,b.description, t.name , u.nickname, u.avatar from t_blog b, t_type t, t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-07-16 19:18:12.760 DEBUG 12952 --- [http-nio-8080-exec-6] com.mengyi.dao.BlogDao.getFirstPageBlog  : ==> Parameters: 10(Integer)
+2020-07-16 19:18:12.772 DEBUG 12952 --- [http-nio-8080-exec-6] com.mengyi.dao.BlogDao.getFirstPageBlog  : <==      Total: 2
+2020-07-16 19:18:12.774 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getAllRecommendBlog      : ==>  Preparing: select * from t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-07-16 19:18:12.775 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getAllRecommendBlog      : ==> Parameters: 
+2020-07-16 19:18:12.778 DEBUG 12952 --- [http-nio-8080-exec-6] c.m.dao.BlogDao.getAllRecommendBlog      : <==      Total: 2
+2020-07-16 19:18:12.783 DEBUG 12952 --- [http-nio-8080-exec-6] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title, b.type_id from t_type t, t_blog b where t.id = b.type_id 
+2020-07-16 19:18:12.784 DEBUG 12952 --- [http-nio-8080-exec-6] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : ==> Parameters: 
+2020-07-16 19:18:12.789 DEBUG 12952 --- [http-nio-8080-exec-6] c.mengyi.dao.TypeDao.getAllTypeAndBlog   : <==      Total: 2
+2020-07-16 19:18:12.792  INFO 12952 --- [http-nio-8080-exec-6] com.mengyi.aspect.LogAspect              : Result : index
+2020-07-16 19:31:24.458  INFO 13484 --- [restartedMain] com.mengyi.BlogApplication               : Starting BlogApplication on DESKTOP-D7L5QJ7 with PID 13484 (D:\code\java_code\blog\target\classes started by mengyiyouth in D:\code\java_code\blog)
+2020-07-16 19:31:24.465 DEBUG 13484 --- [restartedMain] com.mengyi.BlogApplication               : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-07-16 19:31:24.466  INFO 13484 --- [restartedMain] com.mengyi.BlogApplication               : The following profiles are active: dev
+2020-07-16 19:31:24.579  INFO 13484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-16 19:31:24.579  INFO 13484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-16 19:31:26.188  INFO 13484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-07-16 19:31:26.193  INFO 13484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-07-16 19:31:26.257  INFO 13484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-07-16 19:31:26.797  INFO 13484 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.mengyi.config.RedisConfig$$EnhancerBySpringCGLIB$$a32824a1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)

@@ -1,0 +1,3 @@
+2020-06-30 08:12:37.728  INFO 15340 --- [main] com.mengyi.BlogApplicationTests          : Starting BlogApplicationTests on DESKTOP-D7L5QJ7 with PID 15340 (started by mengyiyouth in D:\code\java_code\blog)
+2020-06-30 08:12:37.733  INFO 15340 --- [main] com.mengyi.BlogApplicationTests          : The following profiles are active: pro
+2020-06-30 08:12:41.859  INFO 15340 --- [main] com.mengyi.BlogApplicationTests          : Started BlogApplicationTests in 4.709 seconds (JVM running for 5.974)
